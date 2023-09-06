@@ -1,5 +1,5 @@
 import React , { useContext , useState , useEffect } from 'react'
-import AddManufacturers from './AddTest.js'
+import AddManufacturers from './AddManufacturers.js'
 import ManufacturersContext from '../../context/Manufacturers/ManufacturersContext.js'
 import { useNavigate, useParams , Link } from "react-router-dom";
 import Pagination from '../Products/Pagination';
@@ -349,7 +349,7 @@ const handleCheck = (e) => {
                                 {sortColumn === 'manufacturer_director_linkedin' && (sortOrder === 'asc' ? ' ▲' : ' ▼')}
                                 
                                 </th>
-                                <th onClick={() => handleSort('manufacturer_customer_reviews')}> Customer Reviews 
+                                <th onClick={() => handleSort('manufacturer_customer_reviews')}> Manufacturer Reviews 
                                 {sortColumn === 'manufacturer_customer_reviews' && (sortOrder === 'asc' ? ' ▲' : ' ▼')}
                                
                                 </th>
@@ -357,7 +357,7 @@ const handleCheck = (e) => {
                                 {sortColumn === 'manufacturer_customer_rating' && (sortOrder === 'asc' ? ' ▲' : ' ▼')}
                                 
                                 </th>
-                                <th onClick={() => handleSort('manufacturer_facebook_url')}> Customer Reviews 
+                                <th onClick={() => handleSort('manufacturer_facebook_url')}> Manufacturer Reviews 
                                 {sortColumn === 'manufacturer_facebook_url' && (sortOrder === 'asc' ? ' ▲' : ' ▼')}
                                
                                 </th>

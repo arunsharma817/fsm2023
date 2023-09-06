@@ -8,6 +8,7 @@ const ManufacturersState = (props) => {
   const ownerToken = localStorage.getItem('token');
   const [manufacturers, setManufacturers] = useState([])
   const [apiResponseMessages, setApiResponseMessages] = useState([]);
+
   const initialValues = {
     "manufacturer_company_name": "",
     "manufacturer_industry": "",
@@ -23,7 +24,7 @@ const ManufacturersState = (props) => {
     "manufacturer_country": "",
     "manufacturer_country_code": "",
     "manufacturer_continent": "",
-    "manufacturer_customer_care": "",
+    "manufacturer_manufacturer_care": "",
     "manufacturer_qr_code": "",
     "manufacturer_barcode_number": "",
     "manufacturer_foundation_date": "",
@@ -42,8 +43,8 @@ const ManufacturersState = (props) => {
     "manufacturer_director_email": "",
     "manufacturer_director_mobile": "",
     "manufacturer_director_linkedin": "",
-    "manufacturer_customer_reviews": "",
-    "manufacturer_customer_rating": "",
+    "manufacturer_manufacturer_reviews": "",
+    "manufacturer_manufacturer_rating": "",
     "manufacturer_facebook_url": "",
     "manufacturer_instagram_url": "",
     "manufacturer_linkedin_url": "",
@@ -76,64 +77,11 @@ const ManufacturersState = (props) => {
   // Add Client State 
 
   const addManufacturers = (text) => {
-    const newManufacturer = {
-        manufacturer_company_name: text.manufacturer_company_name,
-        manufacturer_industry: text.manufacturer_industry,
-        manufacturer_products: text.manufacturer_products,
-        manufacturer_mobile: text.manufacturer_mobile,
-        manufacturer_mobile_alternate: text.manufacturer_mobile_alternate,
-        manufacturer_email: text.manufacturer_email,
-        manufacturer_website: text.manufacturer_website,
-        manufacturer_registered_address: text.manufacturer_registered_address,
-        manufacturer_zip_code: text.manufacturer_zip_code,
-        manufacturer_city: text.manufacturer_city,
-        manufacturer_state: text.manufacturer_state,
-        manufacturer_country: text.manufacturer_country,	
-        manufacturer_country_code: text.manufacturer_country_code,
-        manufacturer_continent: text.manufacturer_continent,
-        manufacturer_customer_care: text.manufacturer_customer_care,
-        manufacturer_qr_code: text.manufacturer_qr_code,
-        manufacturer_barcode_number: text.manufacturer_barcode_number,
-        manufacturer_foundation_date: text.manufacturer_foundation_date,
-        manufacturer_license_number: text.manufacturer_license_number,
-        manufacturer_pan_number: text.manufacturer_pan_number,
-        manufacturer_gst_number: text.manufacturer_gst_number,
-        manufacturer_corporation_certificate: text.manufacturer_corporation_certificate,
-        manufacturer_gumasta_certificate: text.manufacturer_gumasta_certificate,
-        manufacturer_moa_certificate: text.manufacturer_moa_certificate,	
-        manufacturer_msme_certificate: text.manufacturer_msme_certificate,
-        manufacturer_account_details: text.manufacturer_account_details,
-        manufacturer_cancelled_cheque: text.manufacturer_cancelled_cheque,
-        manufacturer_number_of_employees: text.manufacturer_number_of_employees,
-        manufacturer_director_fname: text.manufacturer_director_fname,
-        manufacturer_director_lname: text.manufacturer_director_lname,
-        manufacturer_director_email: text.manufacturer_director_email,
-        manufacturer_director_mobile: text.manufacturer_director_mobile,
-        manufacturer_director_linkedin: text.manufacturer_director_linkedin,
-        manufacturer_customer_reviews: text.manufacturer_customer_reviews,
-        manufacturer_customer_rating: text.manufacturer_customer_rating,
-        manufacturer_facebook_url: text.manufacturer_facebook_url,
-        manufacturer_instagram_url: text.manufacturer_instagram_url,
-        manufacturer_linkedin_url: text.manufacturer_linkedin_url,
-        manufacturer_youtube_url: text.manufacturer_youtube_url,
-        manufacturer_made_in_countries: text.manufacturer_made_in_countries,
-        manufacturer_attributes: text.manufacturer_attributes,
-        manufacturer_brief_history: text.manufacturer_brief_history
-    }
-    axios.post('http://localhost:5000/api/manufacturers/create/', newManufacturer, {
-      headers: {
-        'owner-token': ownerToken,
-        'Accept': 'application/json',
-        'Content-Type': 'multipart/form-data'
-      }
-    }).then(resp => {
-      console.log(resp.data._id);
-      const newManufacturer = {
-        _id: resp.data._id,
-        manufacturer_company_name: text.manufacturer_company_name,
+     const newManufacturer = {     
+      manufacturer_company_name: text.manufacturer_company_name,
             manufacturer_industry: text.manufacturer_industry,
             manufacturer_products: text.manufacturer_products,
-			      manufacturer_mobile: text.manufacturer_mobile,
+			manufacturer_mobile: text.manufacturer_mobile,
             manufacturer_mobile_alternate: text.manufacturer_mobile_alternate,
             manufacturer_email: text.manufacturer_email,
             manufacturer_website: text.manufacturer_website,
@@ -144,7 +92,7 @@ const ManufacturersState = (props) => {
             manufacturer_country: text.manufacturer_country,	
 			manufacturer_country_code: text.manufacturer_country_code,
 			manufacturer_continent: text.manufacturer_continent,
-            manufacturer_customer_care: text.manufacturer_customer_care,
+            manufacturer_manufacturer_care: text.manufacturer_manufacturer_care,
             manufacturer_qr_code: text.manufacturer_qr_code,
 			manufacturer_barcode_number: text.manufacturer_barcode_number,
 			manufacturer_foundation_date: text.manufacturer_foundation_date,
@@ -163,8 +111,61 @@ const ManufacturersState = (props) => {
             manufacturer_director_email: text.manufacturer_director_email,
             manufacturer_director_mobile: text.manufacturer_director_mobile,
 			manufacturer_director_linkedin: text.manufacturer_director_linkedin,
-			manufacturer_customer_reviews: text.manufacturer_customer_reviews,
-            manufacturer_customer_rating: text.manufacturer_customer_rating,
+			manufacturer_manufacturer_reviews: text.manufacturer_manufacturer_reviews,
+            manufacturer_manufacturer_rating: text.manufacturer_manufacturer_rating,
+            manufacturer_facebook_url: text.manufacturer_facebook_url,
+			manufacturer_instagram_url: text.manufacturer_instagram_url,
+			manufacturer_linkedin_url: text.manufacturer_linkedin_url,
+            manufacturer_youtube_url: text.manufacturer_youtube_url,
+            manufacturer_made_in_countries: text.manufacturer_made_in_countries,
+			manufacturer_attributes: text.manufacturer_attributes,
+            manufacturer_brief_history: text.manufacturer_brief_history
+    }
+    axios.post('http://localhost:5000/api/manufacturers/create', newManufacturer, {
+      headers: {
+        'owner-token': ownerToken,
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }
+    }).then(resp => {
+      console.log(resp.data._id);
+      const newManufacturers = {
+        _id: resp.data._id,
+        manufacturer_company_name: text.manufacturer_company_name,
+            manufacturer_industry: text.manufacturer_industry,
+            manufacturer_products: text.manufacturer_products,
+			      manufacturer_mobile: text.manufacturer_mobile,
+            manufacturer_mobile_alternate: text.manufacturer_mobile_alternate,
+            manufacturer_email: text.manufacturer_email,
+            manufacturer_website: text.manufacturer_website,
+			manufacturer_registered_address: text.manufacturer_registered_address,
+            manufacturer_zip_code: text.manufacturer_zip_code,
+			manufacturer_city: text.manufacturer_city,
+            manufacturer_state: text.manufacturer_state,
+            manufacturer_country: text.manufacturer_country,	
+			manufacturer_country_code: text.manufacturer_country_code,
+			manufacturer_continent: text.manufacturer_continent,
+            manufacturer_manufacturer_care: text.manufacturer_manufacturer_care,
+            manufacturer_qr_code: text.manufacturer_qr_code,
+			manufacturer_barcode_number: text.manufacturer_barcode_number,
+			manufacturer_foundation_date: text.manufacturer_foundation_date,
+            manufacturer_license_number: text.manufacturer_license_number,
+            manufacturer_pan_number: text.manufacturer_pan_number,
+			manufacturer_gst_number: text.manufacturer_gst_number,
+			manufacturer_corporation_certificate: text.manufacturer_corporation_certificate,
+            manufacturer_gumasta_certificate: text.manufacturer_gumasta_certificate,
+            manufacturer_moa_certificate: text.manufacturer_moa_certificate,	
+			manufacturer_msme_certificate: text.manufacturer_msme_certificate,
+			manufacturer_account_details: text.manufacturer_account_details,
+            manufacturer_cancelled_cheque: text.manufacturer_cancelled_cheque,
+            manufacturer_number_of_employees: text.manufacturer_number_of_employees,
+			manufacturer_director_fname: text.manufacturer_director_fname,
+			manufacturer_director_lname: text.manufacturer_director_lname,
+            manufacturer_director_email: text.manufacturer_director_email,
+            manufacturer_director_mobile: text.manufacturer_director_mobile,
+			manufacturer_director_linkedin: text.manufacturer_director_linkedin,
+			manufacturer_manufacturer_reviews: text.manufacturer_manufacturer_reviews,
+            manufacturer_manufacturer_rating: text.manufacturer_manufacturer_rating,
             manufacturer_facebook_url: text.manufacturer_facebook_url,
 			manufacturer_instagram_url: text.manufacturer_instagram_url,
 			manufacturer_linkedin_url: text.manufacturer_linkedin_url,
@@ -175,12 +176,12 @@ const ManufacturersState = (props) => {
       }
       {/* I managed "setInspectors" from my end to add immediate when successfully added into the database */ }
       setManufacturers((oldManufacturers) => {
-        return [...oldManufacturers, newManufacturer];
+        return [...oldManufacturers, newManufacturers];
       })      
       ///return { message : text.manufacturer_fname+" The New User has been successfully Added!!"};
       
       setApiResponseMessages(<div className="alert alert-success">
-      <strong>Success! {text.manufacturer_company_name} </strong> The New Manufacturer has been successfully Added!!
+      <strong> <pre>{JSON.stringify(newManufacturers, null, 2)}</pre>Success! {text.manufacturer_company_name} </strong> The New Manufacturer has been successfully Added!!
       </div>);
       setFormValues(initialValues);
     }).catch(error => {
@@ -251,7 +252,7 @@ const ManufacturersState = (props) => {
             manufacturer_country: text.manufacturer_country,	
 			manufacturer_country_code: text.manufacturer_country_code,
 			manufacturer_continent: text.manufacturer_continent,
-            manufacturer_customer_care: text.manufacturer_customer_care,
+            manufacturer_manufacturer_care: text.manufacturer_manufacturer_care,
             manufacturer_qr_code: text.manufacturer_qr_code,
 			manufacturer_barcode_number: text.manufacturer_barcode_number,
 			manufacturer_foundation_date: text.manufacturer_foundation_date,
@@ -270,8 +271,8 @@ const ManufacturersState = (props) => {
             manufacturer_director_email: text.manufacturer_director_email,
             manufacturer_director_mobile: text.manufacturer_director_mobile,
 			manufacturer_director_linkedin: text.manufacturer_director_linkedin,
-			manufacturer_customer_reviews: text.manufacturer_customer_reviews,
-            manufacturer_customer_rating: text.manufacturer_customer_rating,
+			manufacturer_manufacturer_reviews: text.manufacturer_manufacturer_reviews,
+            manufacturer_manufacturer_rating: text.manufacturer_manufacturer_rating,
             manufacturer_facebook_url: text.manufacturer_facebook_url,
 			manufacturer_instagram_url: text.manufacturer_instagram_url,
 			manufacturer_linkedin_url: text.manufacturer_linkedin_url,
@@ -280,6 +281,10 @@ const ManufacturersState = (props) => {
 			manufacturer_attributes: text.manufacturer_attributes,
             manufacturer_brief_history: text.manufacturer_brief_history
     }
+
+    alert("From State"+newManufacturer);
+    console.log("From State"+newManufacturer);
+
     axios.put('http://localhost:5000/api/manufacturers/update/' + manufacturerId, newManufacturer, {
       headers: {
         'owner-token': ownerToken,

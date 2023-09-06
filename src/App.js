@@ -142,6 +142,45 @@ import ListManufacturers from './components/Manufacturers/ListManufacturers.js'
 import AddManufacturers from './components/Manufacturers/AddManufacturers.js'
 import BoardManufacturers from './components/Manufacturers/BoardManufacturers.js'
 
+
+import CustomersState from './context/Customers/CustomersState.js'
+import ListCustomers from './components/Customers/ListCustomers.js'
+import AddCustomers from './components/Customers/AddCustomers.js'
+import BoardCustomers from './components/Customers/BoardCustomers.js'
+
+import PratyashisState from './context/Pratyashis/PratyashisState.js'
+import ListPratyashis from './components/Pratyashis/ListPratyashis.js'
+import AddPratyashis from './components/Pratyashis/AddPratyashis.js'
+import BoardPratyashis from './components/Pratyashis/BoardPratyashis.js'
+
+import CompanysState from './context/Companys/CompanysState.js'
+import ListCompanys from './components/Companys/ListCompanys.js'
+import AddCompanys from './components/Companys/AddCompanys.js'
+import BoardCompanys from './components/Companys/BoardCompanys.js'
+
+
+import ContractorsState from './context/Contractors/ContractorsState.js'
+import ListContractors from './components/Contractors/ListContractors.js'
+import AddContractors from './components/Contractors/AddContractors.js'
+import BoardContractors from './components/Contractors/BoardContractors.js'
+
+
+import EventsState from './context/Events/EventsState.js'
+import ListEvents from './components/Events/ListEvents.js'
+import AddEvents from './components/Events/AddEvents.js'
+import BoardEvents from './components/Events/BoardEvents.js'
+
+import StudentsState from './context/Students/StudentsState.js'
+import ListStudents from './components/Students/ListStudents.js'
+import AddStudents from './components/Students/AddStudents.js'
+import BoardStudents from './components/Students/BoardStudents.js'
+
+
+import TailorsState from './context/Tailors/TailorsState.js'
+import ListTailors from './components/Tailors/ListTailors.js'
+import AddTailors from './components/Tailors/AddTailors.js'
+import BoardTailors from './components/Tailors/BoardTailors.js'
+
 function App() {
   return (
     
@@ -168,7 +207,14 @@ function App() {
         <FamilyMembersState>
         <BuildingMembersState> 
         <SamajMembersState>
-        <ManufacturersState>            
+        <ManufacturersState>
+        <CustomersState>
+        <PratyashisState> 
+        <CompanysState>
+        <ContractorsState> 
+        <EventsState>
+           <StudentsState> 
+           <TailorsState>                                    
         <SocialLinksState>  
       <Router>
       <div className="container-fluid p-0 av-wrapper">  
@@ -323,6 +369,14 @@ function App() {
             <Route path="/manufacturers/:id" element={<ListManufacturers />} /> 
             <Route path="/manufacturers/boardmanufacturers" element={<BoardManufacturers />} /> 
 
+
+            <Route path="/customers" element={<ListCustomers />} /> 
+            <Route path="/customers/addcustomers" element={<AddCustomers />} /> 
+            <Route path="/customers/addcustomers/:id" element={<AddCustomers />} /> 
+            <Route path="/customers/:id" element={<ListCustomers />} /> 
+            <Route path="/customers/boardcustomers" element={<BoardCustomers />} />
+
+
             <Route path="/buildingmembers" element={<ListBuildingMembers />} /> 
             <Route path="/buildingmembers/addbuildingmembers" element={<AddBuildingMembers />} /> 
             <Route path="/buildingmembers/addbuildingmembers/:id" element={<AddBuildingMembers />} /> 
@@ -335,12 +389,61 @@ function App() {
             <Route path="/sociallinks/:id" element={<ListSocialLinks />} /> 
             <Route path="/sociallinks/boardsociallinks" element={<BoardSocialLinks />} /> 
 
+
+            <Route path="/pratyashis" element={<ListPratyashis />} /> 
+            <Route path="/pratyashis/addpratyashis" element={<AddPratyashis />} /> 
+            <Route path="/pratyashis/addpratyashis/:id" element={<AddPratyashis />} /> 
+            <Route path="/pratyashis/:id" element={<ListPratyashis />} /> 
+            <Route path="/pratyashis/boardpratyashis" element={<BoardPratyashis />} />
+
+
+            <Route path="/companys" element={<ListCompanys />} /> 
+            <Route path="/companys/addcompanys" element={<AddCompanys />} /> 
+            <Route path="/companys/addcompanys/:id" element={<AddCompanys />} /> 
+            <Route path="/companys/:id" element={<ListCompanys />} /> 
+            <Route path="/companys/boardcompanys" element={<BoardCompanys />} />
+
+            <Route path="/contractors" element={<ListContractors />} /> 
+            <Route path="/contractors/addcontractors" element={<AddContractors />} /> 
+            <Route path="/contractors/addcontractors/:id" element={<AddContractors />} /> 
+            <Route path="/contractors/:id" element={<ListContractors />} /> 
+            <Route path="/contractors/boardcontractors" element={<BoardContractors />} />
+
+
+            <Route path="/events" element={<ListEvents />} /> 
+            <Route path="/events/addevents" element={<AddEvents />} /> 
+            <Route path="/events/addevents/:id" element={<AddEvents />} /> 
+            <Route path="/events/:id" element={<ListEvents />} /> 
+            <Route path="/events/boardevents" element={<BoardEvents />} />
+
+            <Route path="/students" element={<ListStudents />} /> 
+            <Route path="/students/addstudents" element={<AddStudents />} /> 
+            <Route path="/students/addstudents/:id" element={<AddStudents />} /> 
+            <Route path="/students/:id" element={<ListStudents />} /> 
+            <Route path="/students/boardstudents" element={<BoardStudents />} />
+
+
+
+            <Route path="/tailors" element={<ListTailors />} /> 
+            <Route path="/tailors/addtailors" element={<AddTailors />} /> 
+            <Route path="/tailors/addtailors/:id" element={<AddTailors />} /> 
+            <Route path="/tailors/:id" element={<ListTailors />} /> 
+            <Route path="/tailors/boardtailors" element={<BoardTailors />} />
+
+
           </Routes>
         </div>
         </div>
       </div>
       </Router>       
-      </SocialLinksState>  
+      </SocialLinksState>
+      </TailorsState> 
+     </StudentsState> 
+     </EventsState>     
+      </ContractorsState>   
+      </CompanysState>      
+      </PratyashisState>
+     </CustomersState>    
       </ManufacturersState>  
       </SamajMembersState>
       </BuildingMembersState>

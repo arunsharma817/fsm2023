@@ -23,11 +23,12 @@ const asyncParseCSV = promisify((filePath, callback) => {
 
 exports.addManufacturers = async (req, res) => {
         
-        const corpCertificate = req.files['manufacturer_corporation_certificate'];
-        const gumastaCertificate = req.files['manufacturer_gumasta_certificate'];
-        const moaCertificate = req.files['manufacturer_moa_certificate'];
-        const msmeCertificate = req.files['manufacturer_msme_certificate'];
+        //const corpCertificate = req.files['manufacturer_corporation_certificate'];
+        //const gumastaCertificate = req.files['manufacturer_gumasta_certificate'];
+        //const moaCertificate = req.files['manufacturer_moa_certificate'];
+        //const msmeCertificate = req.files['manufacturer_msme_certificate'];
         //const results = await asyncParseCSV(req.file.path);
+        
         var obj = {
             manufacturer_company_name: req.body.manufacturer_company_name,
             manufacturer_industry: req.body.manufacturer_industry,
@@ -50,10 +51,10 @@ exports.addManufacturers = async (req, res) => {
             manufacturer_license_number: req.body.manufacturer_license_number,
             manufacturer_pan_number: req.body.manufacturer_pan_number,
 			manufacturer_gst_number: req.body.manufacturer_gst_number,
-			manufacturer_corporation_certificate: corpCertificate,
-            manufacturer_gumasta_certificate: gumastaCertificate,
-            manufacturer_moa_certificate: moaCertificate,	
-			manufacturer_msme_certificate: msmeCertificate,
+			manufacturer_corporation_certificate: req.body.manufacturer_corporation_certificate,
+            manufacturer_gumasta_certificate: req.body.manufacturer_gumasta_certificate,
+            manufacturer_moa_certificate: req.body.manufacturer_moa_certificate,	
+			manufacturer_msme_certificate: req.body.manufacturer_msme_certificate,
 			manufacturer_account_details: req.body.manufacturer_account_details,
             manufacturer_cancelled_cheque: req.body.manufacturer_cancelled_cheque,
             manufacturer_number_of_employees: req.body.manufacturer_number_of_employees,
@@ -72,16 +73,20 @@ exports.addManufacturers = async (req, res) => {
 			manufacturer_attributes: req.body.manufacturer_attributes,
             manufacturer_brief_history: req.body.manufacturer_brief_history
         }
+        console.log(JSON.stringify(obj, null, 2));
         const newManufacturersModel = new ManufacturersModel(obj);
+        
+        //const samajmember = new SamajMembers({ samaj_member_fname, samaj_member_lname, samaj_member_mobile});
+        //const saveSamajMember = await samajmember.save();
+        
         try {
-
             let result = await newManufacturersModel.save();
-            res.json({ success: true, status: status.CREATED, msg: 'Manufacturer is created successfully.' });
+            res.json({ success: true, status: status.CREATED, msg: result });
         }
         catch (err) {
             return res.json({ success: false, status: status.INVALIDSYNTAX, err: err, msg: 'Save Manufacturer failed.' });
         }
-    
+        
 }
 
 

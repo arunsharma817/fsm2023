@@ -450,19 +450,19 @@ alert(formValues.manufacturer_company_name.length);
 														
 														<div className="col-12 col-md-6 form-group">
                                                             <label>Gumasta :</label>
-                                                                <input className="col-12 col-md-6 form-group" type="file"  accept=".pdf,.doc,.docx" name="manufacturer_gumasta_certificate" id="manufacturer_gumasta_certificate" value={formValues.manufacturer_gumasta_certificate} onChange={(e) => handleInputChange(e)} />
+                                                                <input className="col-12 col-md-6 form-group" type="text" name="manufacturer_gumasta_certificate" id="manufacturer_gumasta_certificate" value={formValues.manufacturer_gumasta_certificate} onChange={(e) => handleInputChange(e)} />
                                                                 <p className="error">{formErrors.manufacturer_gumasta_certificate}</p>
                                                         </div>
 														
 														<div className="col-12 col-md-6 form-group">
                                                             <label>MOA Certificate :</label>
-                                                                <input className="col-12 col-md-6 form-group" type="file"  accept=".pdf,.doc,.docx" name="manufacturer_moa_certificate" id="manufacturer_moa_certificate" value={formValues.manufacturer_moa_certificate} onChange={(e) => handleInputChange(e)} />
+                                                                <input className="col-12 col-md-6 form-group" type="text" name="manufacturer_moa_certificate" id="manufacturer_moa_certificate" value={formValues.manufacturer_moa_certificate} onChange={(e) => handleInputChange(e)} />
                                                                 <p className="error">{formErrors.manufacturer_moa_certificate}</p>
                                                         </div>
 														
 														<div className="col-12 col-md-6 form-group">
                                                             <label>MSME :</label>
-                                                                <input className="col-12 col-md-6 form-group" type="file"  accept=".pdf,.doc,.docx" name="manufacturer_msme_certificate" id="manufacturer_msme_certificate" value={formValues.manufacturer_msme_certificate} onChange={(e) => handleInputChange(e)} />
+                                                                <input className="col-12 col-md-6 form-group" type="text"   name="manufacturer_msme_certificate" id="manufacturer_msme_certificate" value={formValues.manufacturer_msme_certificate} onChange={(e) => handleInputChange(e)} />
                                                                 <p className="error">{formErrors.manufacturer_msme_certificate}</p>
                                                         </div>
 														

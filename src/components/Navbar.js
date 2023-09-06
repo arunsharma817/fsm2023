@@ -392,6 +392,98 @@ const Navbar = () => {
                     )}
 
 
+{loggedIn !== null && ( 
+                    <li className="nav-item dropdown">
+                        <Link className={`nav-link ${location.pathname === "/customers/boardcustomers" ? "active" : ""}`} to="/customers/boardcustomers">Customers</Link>
+                        <ul class="dropdown-menu">
+                            <li> <Link className="dropdown-item " to="/customers/addcustomers">Add Customers </Link></li>                           
+                            <li> <Link className="dropdown-item" to="/customers"> List Customers </Link></li>
+                            <li> <Link className="dropdown-item" to="#"> Export </Link></li>
+                            <li> <Link className="dropdown-item" to="#"> Import &raquo;</Link></li>
+                        </ul>
+
+                    </li>
+                    )}
+
+{loggedIn !== null && ( 
+                    <li className="nav-item dropdown">
+                        <Link className={`nav-link ${location.pathname === "/pratyashis/boardpratyashis" ? "active" : ""}`} to="/pratyashis/boardpratyashis">Pratyashis</Link>
+                        <ul class="dropdown-menu">
+                            <li> <Link className="dropdown-item " to="/pratyashis/addpratyashis">Add Pratyashis </Link></li>                           
+                            <li> <Link className="dropdown-item" to="/pratyashis"> List Pratyashis </Link></li>
+                            <li> <Link className="dropdown-item" to="#"> Export </Link></li>
+                            <li> <Link className="dropdown-item" to="#"> Import &raquo;</Link></li>
+                        </ul>
+
+                    </li>
+                    )}
+
+
+{loggedIn !== null && ( 
+                    <li className="nav-item dropdown">
+                        <Link className={`nav-link ${location.pathname === "/companys/boardcompanys" ? "active" : ""}`} to="/companys/boardcompanys">Companys</Link>
+                        <ul class="dropdown-menu">
+                            <li> <Link className="dropdown-item " to="/companys/addcompanys">Add Companys </Link></li>                           
+                            <li> <Link className="dropdown-item" to="/companys"> List Companys </Link></li>
+                            <li> <Link className="dropdown-item" to="#"> Export </Link></li>
+                            <li> <Link className="dropdown-item" to="#"> Import &raquo;</Link></li>
+                        </ul>
+
+                    </li>
+                    )}
+
+{loggedIn !== null && ( 
+                    <li className="nav-item dropdown">
+                        <Link className={`nav-link ${location.pathname === "/contractors/boardcontractors" ? "active" : ""}`} to="/contractors/boardcontractors">Contractors</Link>
+                        <ul class="dropdown-menu">
+                            <li> <Link className="dropdown-item " to="/contractors/addcontractors">Add Contractors </Link></li>                           
+                            <li> <Link className="dropdown-item" to="/contractors"> List Contractors </Link></li>
+                            <li> <Link className="dropdown-item" to="#"> Export </Link></li>
+                            <li> <Link className="dropdown-item" to="#"> Import &raquo;</Link></li>
+                        </ul>
+
+                    </li>
+                    )}
+
+
+{loggedIn !== null && ( 
+                    <li className="nav-item dropdown">
+                        <Link className={`nav-link ${location.pathname === "/events/boardevents" ? "active" : ""}`} to="/events/boardevents">Events</Link>
+                        <ul class="dropdown-menu">
+                            <li> <Link className="dropdown-item " to="/events/addevents">Add Events </Link></li>                           
+                            <li> <Link className="dropdown-item" to="/events"> List Events </Link></li>
+                            <li> <Link className="dropdown-item" to="#"> Export </Link></li>
+                            <li> <Link className="dropdown-item" to="#"> Import &raquo;</Link></li>
+                        </ul>
+
+                    </li>
+                    )}
+
+
+                    {loggedIn !== null && ( 
+                        <li className="nav-item dropdown">
+                            <Link className={`nav-link ${location.pathname === "/students/boardstudents" ? "active" : ""}`} to="/students/boardstudents">Students</Link>
+                            <ul class="dropdown-menu">
+                                <li> <Link className="dropdown-item " to="/students/addstudents">Add Students </Link></li>                           
+                                <li> <Link className="dropdown-item" to="/students"> List Students </Link></li>
+                                <li> <Link className="dropdown-item" to="#"> Export </Link></li>
+                                <li> <Link className="dropdown-item" to="#"> Import &raquo;</Link></li>
+                            </ul>
+                        </li>
+                    )}
+
+
+{loggedIn !== null && ( 
+                        <li className="nav-item dropdown">
+                            <Link className={`nav-link ${location.pathname === "/tailors/boardtailors" ? "active" : ""}`} to="/tailors/boardtailors">Tailors</Link>
+                            <ul class="dropdown-menu">
+                                <li> <Link className="dropdown-item " to="/tailors/addtailors">Add Tailors </Link></li>                           
+                                <li> <Link className="dropdown-item" to="/tailors"> List Tailors </Link></li>
+                                <li> <Link className="dropdown-item" to="#"> Export </Link></li>
+                                <li> <Link className="dropdown-item" to="#"> Import &raquo;</Link></li>
+                            </ul>
+                        </li>
+                    )}
 
 {loggedIn !== null && ( 
                     <li className="nav-item dropdown">

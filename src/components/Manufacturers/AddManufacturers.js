@@ -26,7 +26,43 @@ const AddManufacturers = (props) => {
         setFormValues({ ...formValues, [name]: value });
     };
     
-   
+   //// Creating Industry Dropdown 
+
+   const industriesList = [
+    "Information Technology",
+    "Healthcare",
+    "Finance",
+    "Education",
+    "Manufacturing",
+    "Retail",
+    "Marketing and Advertising",
+    "Real Estate",
+    "Entertainment",
+    "Transportation and Logistics",
+    "Energy and Utilities",
+    "Agriculture",
+    "Hospitality and Tourism",
+    "Nonprofit and Charity",
+    "Construction",
+    "Telecommunications",
+    "Automotive",
+    "Pharmaceuticals",
+    "Aerospace and Defense",
+    "Media and Publishing",
+  ];
+
+  ////
+  
+
+///// Countries List 
+
+const countriesList = [
+    { value: 'in', label: 'India' },
+    { value: 'np', label: 'Nepal' },
+    { value: 'bh', label: 'Bhutan' }
+    // ...other countries
+  ];
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -98,7 +134,7 @@ alert(formValues.manufacturer_company_name.length);
        }
 	   
 	   if(formValues.manufacturer_customer_care.length > 20) {
-        newErrors.manufacturer_customer_care = "Manufacturer Customer Care  must  be less than 20 characters";
+        newErrors.manufacturer_customer_care = "Manufacturer Manufacturer Care  must  be less than 20 characters";
        }
 	   
 	   if(formValues.manufacturer_qr_code.length > 20) {
@@ -229,6 +265,8 @@ alert(formValues.manufacturer_company_name.length);
                 }            
             }else{
                 //setApiResponseMessages(addUser(text));
+                alert(JSON.stringify(text, null, 2));
+                console.log(JSON.stringify(text, null, 2));
                 addManufacturers(text); 
                 {/*                 
                 when redirection needed 
@@ -286,11 +324,9 @@ alert(formValues.manufacturer_company_name.length);
                                                             <p className="error">{formErrors.manufacturer_company_name}</p>
                                                         </div>
                                                         <div className="col-12 col-md-6 form-group">
-                                                            <label>Industry: </label>
-                                                            <input className="col-12 col-md-6 form-group" type="text" name="manufacturer_industry" id="manufacturer_industry" value={formValues.manufacturer_industry} onChange={(e) => handleInputChange(e)} />
-                                                           
-                                                           <p className="error">{formErrors.manufacturer_industry}</p>
-
+                                                            <label>Industry:</label>
+                                                                <input className="col-12 col-md-6 form-group" type="text" name="manufacturer_industry" id="manufacturer_industry" value={formValues.manufacturer_industry} onChange={(e) => handleInputChange(e)} />
+                                                                <p className="error">{formErrors.manufacturer_industry}</p>
                                                         </div>
                                                         <div className="col-12 col-md-6 form-group">
                                                             <label>Products:</label>
@@ -359,7 +395,7 @@ alert(formValues.manufacturer_company_name.length);
                                                                 <p className="error">{formErrors.manufacturer_continent}</p>
                                                         </div>
 														<div className="col-12 col-md-6 form-group">
-                                                            <label>Customer Care :</label>
+                                                            <label>Manufacturer Care :</label>
                                                                 <input className="col-12 col-md-6 form-group" type="text" name="manufacturer_customer_care" id="manufacturer_customer_care" value={formValues.manufacturer_customer_care} onChange={(e) => handleInputChange(e)} />
                                                                 <p className="error">{formErrors.manufacturer_customer_care}</p>
                                                         </div>
@@ -401,8 +437,8 @@ alert(formValues.manufacturer_company_name.length);
                                                         </div>
 														
 														<div className="col-12 col-md-6 form-group">
-                                                            <label>Copr Certificate :</label>
-                                                                <input className="col-12 col-md-6 form-group" type="text" name="manufacturer_corporation_certificate" id="manufacturer_corporation_certificate" value={formValues.manufacturer_corporation_certificate} onChange={(e) => handleInputChange(e)} />
+                                                            <label>Corporate Certificate :</label>
+                                                                <input className="col-12 col-md-6 form-group" type="text"   name="manufacturer_corporation_certificate" id="manufacturer_corporation_certificate" value={formValues.manufacturer_corporation_certificate} onChange={(e) => handleInputChange(e)} />
                                                                 <p className="error">{formErrors.manufacturer_corporation_certificate}</p>
                                                         </div>
 														
@@ -420,7 +456,7 @@ alert(formValues.manufacturer_company_name.length);
 														
 														<div className="col-12 col-md-6 form-group">
                                                             <label>MSME :</label>
-                                                                <input className="col-12 col-md-6 form-group" type="text" name="manufacturer_msme_certificate" id="manufacturer_msme_certificate" value={formValues.manufacturer_msme_certificate} onChange={(e) => handleInputChange(e)} />
+                                                                <input className="col-12 col-md-6 form-group" type="text"   name="manufacturer_msme_certificate" id="manufacturer_msme_certificate" value={formValues.manufacturer_msme_certificate} onChange={(e) => handleInputChange(e)} />
                                                                 <p className="error">{formErrors.manufacturer_msme_certificate}</p>
                                                         </div>
 														
@@ -473,13 +509,13 @@ alert(formValues.manufacturer_company_name.length);
                                                         </div>
 														
 														<div className="col-12 col-md-6 form-group">
-                                                            <label>Customer Reviews :</label>
+                                                            <label>Manufacturer Reviews :</label>
                                                                 <input className="col-12 col-md-6 form-group" type="text" name="manufacturer_customer_reviews" id="manufacturer_customer_reviews" value={formValues.manufacturer_customer_reviews} onChange={(e) => handleInputChange(e)} />
                                                                 <p className="error">{formErrors.manufacturer_customer_reviews}</p>
                                                         </div>
 														
 														<div className="col-12 col-md-6 form-group">
-                                                            <label>Customer Rating :</label>
+                                                            <label>Manufacturer Rating :</label>
                                                                 <input className="col-12 col-md-6 form-group" type="text" name="manufacturer_customer_rating" id="manufacturer_customer_rating" value={formValues.manufacturer_customer_rating} onChange={(e) => handleInputChange(e)} />
                                                                 <p className="error">{formErrors.manufacturer_customer_rating}</p>
                                                         </div>

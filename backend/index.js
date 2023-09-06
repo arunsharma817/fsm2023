@@ -39,7 +39,13 @@ app.use('/api/sociallinks', require('./routes/SocialLinks.route'))
 app.use('/api/buildingmembers', require('./routes/BuildingMembers'))
 app.use('/api/samajmembers', require('./routes/SamajMembers'))
 app.use('/api/manufacturers', require('./routes/Manufacturers'))
-
+app.use('/api/customers', require('./routes/Customers'))
+app.use('/api/pratyashis', require('./routes/Pratyashis'))
+app.use('/api/companys', require('./routes/Companys'))
+app.use('/api/contractors', require('./routes/Contractors'))
+app.use('/api/events', require('./routes/Events'))
+app.use('/api/students', require('./routes/Students'))
+app.use('/api/tailors', require('./routes/Tailors'))
 
 
 app.get('/', (req, res) => {
